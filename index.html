@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>Lincoln Bootcamp Remake</title>
 		<link rel="stylesheet" href="style.css">
+		<script src="https://kit.fontawesome.com/5efe6f7c46.js" crossorigin="anonymous"></script>
 	</head>
 	
 	<body>
@@ -35,6 +36,7 @@
 		<section id="home">
 			<div class="showcase">
 			</div>
+			<input class="check-side-menu" id="open-menu" type="checkbox">
 			<!--side menu-->
 			<aside>
 				<!--options-->
@@ -53,7 +55,8 @@
 				</div>
 				
 				<!--form-->
-				<div class="form-container">
+				<a href="#">Click to sign-up</a>
+				<!--<div class="form-container">
 					<h4>have questions?</h4>
 					<h4>we have the answers</h4>
 					
@@ -64,14 +67,19 @@
 						<textarea rows="5" required></textarea>
 						<button type="submit" class="btn-submit">Submit</button>
 					</form>
-				</div>
+				</div>-->
 			</aside>
+			<label class="open-menu" for="open-menu">
+				<i>&#10095;</i>
+			</label>
+			<label class="close-menu" for="open-menu">
+				<i>&#10094;</i>
+			</label>
 		</section>
 		<!--about section-->
 		<section id="about">
 			<article>
 				<div class="main">
-					<p></p>
 				</div>
 			</article>
 		</section>
@@ -81,20 +89,19 @@
 			
 			<div class="highlights">
 				<div class="dev">
-					<img src="img/b1.jpg" alt="">
+					<img src="img/person1.jpg" alt="">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
 				</div>
 				<div class="dev">
-					<img src="img/b1.jpg" alt="">
+					<img src="img/person2.jpg" alt="">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
 				</div>
 				<div class="dev">
-					<img src="img/b1.jpg" alt="">
+					<img src="img/person3.jpg" alt="">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
 				</div>
 			</div>
 		</section>
-		<!--contact and footer section-->
 		<footer>
 			<div class="contact-info">
 				<h3>Contact Us</h3>
@@ -102,12 +109,13 @@
 				<p>(00)0000-0000</p>
 			</div>
 			<div class="social-media">
-				<a><i>FB</i></a>
-				<a><i>TW</i></a>
-				<a><i>IG</i></a>
+				<a class="icon"><i class="fab fa-facebook-square"></i></a>
+				<a class="icon"><i class="fab fa-twitter-square"></i></a>
+				<a class="icon"><i class="fab fa-instagram"></i></a>
 				<hr class="socket">
 				<strong><p>&copy; Lincoln's Bootcamp 2020</p></strong>
 			</div>
 		</footer>
+		<script src="main.js"></script>
 	</body>
 </html>
