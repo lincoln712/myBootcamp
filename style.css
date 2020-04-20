@@ -1,0 +1,198 @@
+/*general settings*/
+:root{
+	--color:rgba(0,60,30);
+}
+
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+}
+
+body{
+	background:#f4f4f4;
+}
+
+/*navigation*/
+header{
+	background:var(--color);
+	color:#f4f4f4;
+	width:100vw;
+	height:25vh;	
+}
+
+header h1{
+	letter-spacing:1.7px;
+	font-style:italic;
+}
+
+header nav ul{
+	list-style:none;
+	background:#f4f4f4;
+	width:50%;
+}
+
+header nav ul li a{
+	text-decoration:none;
+	color:var(--color);
+}
+/*end navigation*/
+
+/*home section*/
+#home aside{
+	box-shadow:0 0 3px #333;
+	width:60%;
+}
+
+#home .menu{
+	text-transform:capitalize;
+	text-align:center;
+	padding-top:0.5rem;
+}
+#home .menu ul{
+	list-style:none;
+}
+#home aside .form-container input,textarea{
+	outline:0;
+}
+
+#home aside .form-container .btn-submit{
+	background:var(--color);
+	color:#f4f4f4;
+	outline:0;
+	border:0;
+}
+
+/*To mobile screens*/
+@media(max-width:576px){
+	/*navigation*/
+	header{
+		font-size:10px;
+		display:flex;
+		align-items:center;
+		justify-content:space-between;
+	}
+	
+	header h1{
+		font-size:2.5em;
+		/*text-align: center;*/
+		width:85%;
+		height:50%;
+		display:inherit;
+		order:2;
+		justify-content: center;
+		align-items:center;
+	}
+	
+	header nav ul{
+		transform: scale(1,0);
+		transition: transform 250ms ease-in-out;
+		transform-origin:top;
+		position:absolute;
+		top:25vh;
+		box-shadow:0 0 3px #333;
+	}
+	
+	header nav ul li{
+		border-top:1px solid var(--color);
+	}
+	
+	header .check:checked ~ nav ul{
+		transform: scale(1,1);
+		transition: transform 250ms ease-in-out;
+	}
+	
+	header .check:checked ~ nav a{
+		opacity:1;
+		transition: opacity 250ms ease-in-out 250ms;
+	}
+	header nav a{
+		font-size:1.6em;
+		opacity:0;
+		transition: opacity 250ms ease;
+	}
+	
+	header .btn-toggle{
+		display:inherit;
+		order:1;
+	}
+	
+	header .check{
+	/*	display:none;*/
+		width:0%;
+	}
+	
+	/*end navigation*/
+	
+	/*home section*/
+	#home .showcase{
+		background-image:url("img/womanUsingAComputer.jpg");
+		background-position:center;
+		background-size:cover;
+		background-repeat: no-repeat;
+		width:100vw;
+		height:50vh;
+	}
+	#home aside{
+		display:none;
+		
+	}
+	
+	#home aside .menu{
+		padding:1rem;
+	}
+	
+	#home aside .form-container{
+		text-align:center;
+	}
+	#home aside .form-container h4{
+		text-transform: uppercase;
+		color:var(--color);
+		text-align:center;
+	}
+	
+	#home aside .form-container form{
+		padding:1rem;
+		line-height:1.7;
+	}
+	
+	#home aside .form-container .red{
+		color:red;
+	}
+	#home aside .form-container input{
+		padding:0.3rem;
+	}
+	#home aside .form-container .btn-submit{
+		font-size:1rem;
+		padding:0.5rem;	
+	}
+}
+
+/*To desktop screens*/
+@media(min-width:768px){
+	/*navigation*/	
+	header{
+		font-size:20px;	
+	}
+	
+	header h1{
+		font-size:2.5em;
+	}
+	
+	header nav a{
+		font-size:1.6em;
+	}
+	
+	header .check{
+		display:none;
+	}
+	header .btn-toggle{
+		display:none;
+	}
+	
+	header nav ul{
+		display:flex;
+		/*justify-content:space-around;*/
+	}
+	/*end navigation*/
+}
