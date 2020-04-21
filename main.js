@@ -45,7 +45,7 @@ readMore.forEach(function(button){
 		/*remove styles from the previous element sibling*/
 		button.previousElementSibling.style.all = "unset";
 		button.style.display = "none";
-		
+		    
 		let readLess = document.createElement("a");
 		readLess.textContent = "Read Less";
 		readLess.className = "read-less";
