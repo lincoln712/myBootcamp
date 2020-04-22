@@ -59,6 +59,14 @@ header nav ul li a{
 	outline:0;
 	border:0;
 }
+
+#about .main p{
+	text-align: center;
+	letter-spacing:1.5px;
+	line-height:1.7;
+	text-indent:25px;
+}
+
 #dev-news .dev .read-more,.read-less{
 	background:var(--color);
 	color:#f4f4f4;
@@ -198,6 +206,12 @@ footer{
 	}
 	/*end home section*/
 	
+	/*about section*/
+	#about{
+		padding:1.5rem;
+	}
+	/*end about section*/
+	
 	/*dev news section*/
 	#dev-news{
 		height:50%;
@@ -230,7 +244,7 @@ footer{
 		width:125px;
 	}
 	
-	#dev-news .dev p{
+	#dev-news .dev .p{
 		letter-spacing:1.3px;
 		text-indent:10%;
 		line-height:1.3;
@@ -239,6 +253,10 @@ footer{
 		overflow:hidden;
 		text-overflow:ellipsis;
 	}
+	.read-less{
+		display:none;
+	}
+	
 	#dev-news .dev .read-more,.read-less{
 		padding:0.2rem;
 		font-size:12px;
@@ -261,11 +279,17 @@ footer{
 @media(min-width:768px){
 	/*navigation*/	
 	header{
-		font-size:20px;	
+		font-size:20px;
+		/*display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items:center;*/
 	}
 	
 	header h1{
 		font-size:2.5em;
+		text-align:center;
+		width:100%;
 	}
 	
 	header nav a{
@@ -279,9 +303,30 @@ footer{
 		display:none;
 	}
 	
-	header nav ul{
-		display:flex;
-		/*justify-content:space-around;*/
+	header nav{
+		display: flex;
 	}
+/*	header nav ul{
+		display: flex;
+		justify-content: flex-end;
+	}*/
+	
+	/*header nav ul li{
+		display:inherit;
+		justify-content: flex-end;
+	}*/
 	/*end navigation*/
+	/*home section*/
+		#home aside{
+			display:none;
+		}
+		#home .open-menu,.close-menu,.check-side-menu{
+			display:none;
+		}
+	/*end home section*/
+	/*dev news section*/
+		#dev-news img{
+			width:250px;
+		}
+	/*end dev news section*/
 }

@@ -24,7 +24,6 @@ arrowCloseMenu.addEventListener('click',function(){
 	arrowOpenMenu.style.left = "0";
 	arrowCloseMenu.style.display = "none";
 	arrowOpenMenu.style.display = "block";
-	/*document.querySelector("footer").style.*/
 	
 	setTimeout(function(){
 		sideMenu.style.height = "0vh";
@@ -34,35 +33,27 @@ arrowCloseMenu.addEventListener('click',function(){
 
 /*dev-news settings*/
 let dev = document.querySelectorAll(".dev");
-let ps = document.querySelectorAll("#dev-news p");
+let p = document.querySelectorAll("#dev-news .p");
 let readMore = document.querySelectorAll("#dev-news .read-more");
-let content = document.querySelectorAll("#dev-news .content");
-//let readLess = document.querySelectorAll("#dev-news .read-less");
-//let readLess = document.createElement("a");
+let readLess = document.querySelectorAll("#dev-news .read-less");
+let cN = p[0].className;
 
-readMore.forEach(function(button){
-	button.addEventListener('click',function(e){
-		/*remove styles from the previous element sibling*/
-		button.previousElementSibling.style.all = "unset";
-		button.style.display = "none";
-		    
-		let readLess = document.createElement("a");
-		readLess.textContent = "Read Less";
-		readLess.className = "read-less";
-		buttonCreated = true;
-		/*add read less button before the read more on the clicked card because you need to grab the previous element sibling and it must be the paragraph*/
-		dev[e.target.id.replace("b","")-1].insertBefore(readLess,button);
-		
-		/*read less functionality*/
-		readLess.addEventListener('click',function(){
-			/*later on look it up about this css "all" property*/
-			readLess.previousElementSibling.className = "#dev-news .dev p";
-		
-			//console.log(readLess.previousElementSibling);
-			readLess.style.display = "none";
-			button.style.display = "inline";
-		});
+readMore.forEach(function(rm,i){
+	rm.addEventListener('click',function(){
+		rm.previousElementSibling.classList.remove(cN);
+		/*remove read more button*/
+		rm.remove();
+		readLess[i].style.display = "inline";
 	});
 });
 
+readLess.forEach(function(rl,i){
+	rl.addEventListener('click',function(){
+		rl.previousElementSibling.classList.add(cN);
+		/*insert read more button again before the read less*/
+		dev[i].insertBefore(readMore[i],this);
+		rl.style.display = "none";
+		readMore[i].style.display = "inline";
+	});
+});
 /*end dev-news settings*/
