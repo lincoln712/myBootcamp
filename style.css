@@ -26,7 +26,7 @@ header h1{
 header nav ul{
 	list-style:none;
 	background:#f4f4f4;
-	width:50%;
+	width:100%;
 }
 
 header nav ul li a{
@@ -110,6 +110,7 @@ footer{
 		position:absolute;
 		top:25vh;
 		box-shadow:0 0 3px #333;
+		width:50%;
 	}
 	
 	header nav ul li{
@@ -180,30 +181,10 @@ footer{
 		padding:0.6rem;
 	}
 	
-	#home aside .form-container{
-		text-align:center;
-	}
-	#home aside .form-container h4{
-		text-transform: uppercase;
-		color:var(--color);
-		text-align:center;
+	#home .form-desktop{
+		display:none;
 	}
 	
-	#home aside .form-container form{
-		padding:1rem;
-		line-height:1.7;
-	}
-	
-	#home aside .form-container .red{
-		color:red;
-	}
-	#home aside .form-container input{
-		padding:0.3rem;
-	}
-	#home aside .form-container .btn-submit{
-		font-size:1rem;
-		padding:0.5rem;	
-	}
 	/*end home section*/
 	
 	/*about section*/
@@ -278,22 +259,32 @@ footer{
 /*To desktop screens*/
 @media(min-width:768px){
 	/*navigation*/	
+	
 	header{
-		font-size:20px;
-		/*display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items:center;*/
+		height:15vh;
+		display:flex;
 	}
-	
 	header h1{
-		font-size:2.5em;
-		text-align:center;
-		width:100%;
+		display: inherit;
+		height:100%;
+		align-items:center;
+		width:50vw;
+		margin-left:1rem;
+	}
+	header nav ul{
+		display: flex;
+		background:var(--color);
+		justify-content: flex-end;
+		width:50vw;
+		height:100%;
+		align-items: center;	
 	}
 	
-	header nav a{
-		font-size:1.6em;
+	header nav ul li{
+		margin-right:2rem;
+	}
+	header nav ul li a{
+		color:#f4f4f4;
 	}
 	
 	header .check{
@@ -303,28 +294,92 @@ footer{
 		display:none;
 	}
 	
-	header nav{
-		display: flex;
-	}
-/*	header nav ul{
-		display: flex;
-		justify-content: flex-end;
-	}*/
-	
-	/*header nav ul li{
-		display:inherit;
-		justify-content: flex-end;
-	}*/
 	/*end navigation*/
 	/*home section*/
+		#home{
+			width:100%;
+			height:100%;
+		}
+		#home .showcase{
+		background-image:url("img/womanUsingAComputer.jpg");
+		background-position:center;
+		background-size:cover;
+		background-repeat: no-repeat;
+		width:100vw;
+		height:50vh;
+		}
 		#home aside{
+			all: unset;	
+			height:50vh;
+		}
+		#home aside .menu{
+			box-shadow:0 0 3px #333;
+			font-size:2.5rem;
+			width:50%;
+			padding:0.5rem;
+		}
+		#home aside .form-mobile{
 			display:none;
 		}
+		#home aside .form-desktop{
+			display:block;
+		}
+		
+		#home aside .form-container{
+		text-align:center;
+		font-size:2.5rem;
+		box-shadow:0 0 3px #333;
+		width:60%;
+		
+		}
+		#home aside .form-container h4{
+		text-transform: uppercase;
+		color:var(--color);
+		text-align:center;
+		}
+		
+		#home aside .form-container form{
+		line-height:1.7;
+		padding:1rem;
+		}
+		
+		#home aside .form-container .red{
+			color:red;
+		}
+		#home aside .form-container input{
+			padding:1rem;
+			margin-left:0.3rem;
+		}
+		
+		#home aside .form-container textarea {
+			padding:3vh;
+			width:60%;
+		}
+		#home aside .form-container .btn-submit{
+		font-size:2rem;
+		display:block;
+		padding:1rem;
+		margin:0 auto;
+		}
+		
 		#home .open-menu,.close-menu,.check-side-menu{
 			display:none;
 		}
 	/*end home section*/
+	/*about section*/
+		#about{
+			all: unset;
+			height:50vh;
+		}
+		
+		#about p{
+			/*display:none;*/
+		}
+	/*end about section*/
 	/*dev news section*/
+		#dev-news{
+			width:100vw;
+		}
 		#dev-news img{
 			width:250px;
 		}
