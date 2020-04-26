@@ -36,6 +36,14 @@ header nav ul li a{
 /*end navigation*/
 
 /*home section*/
+#home .showcase{
+	background-image:url("img/womanUsingAComputer.jpg");
+	background-position:center;
+	background-size:cover;
+	background-repeat: no-repeat;
+	width:100vw;
+	height:50vh;
+}
 #home aside{
 	box-shadow:0 0 3px #333;
 	width:60%;
@@ -144,14 +152,6 @@ footer{
 	/*end navigation*/
 	
 	/*home section*/
-	#home .showcase{
-		background-image:url("img/womanUsingAComputer.jpg");
-		background-position:center;
-		background-size:cover;
-		background-repeat: no-repeat;
-		width:100vw;
-		height:50vh;
-	}
 	
 	#home .check-side-menu{
 		display:none;
@@ -259,7 +259,9 @@ footer{
 /*To desktop screens*/
 @media(min-width:768px){
 	/*navigation*/	
-	
+	*{
+		all:unset;
+	}
 	header{
 		height:15vh;
 		display:flex;
@@ -296,18 +298,11 @@ footer{
 	
 	/*end navigation*/
 	/*home section*/
-		#home{
+		/*#home{
 			width:100%;
 			height:100%;
 		}
-		#home .showcase{
-		background-image:url("img/womanUsingAComputer.jpg");
-		background-position:center;
-		background-size:cover;
-		background-repeat: no-repeat;
-		width:100vw;
-		height:50vh;
-		}
+		
 		#home aside{
 			all: unset;	
 			height:50vh;
@@ -364,24 +359,30 @@ footer{
 		
 		#home .open-menu,.close-menu,.check-side-menu{
 			display:none;
-		}
+		}*/
 	/*end home section*/
-	/*about section*/
+	/*about section
 		#about{
 			all: unset;
 			height:50vh;
 		}
 		
 		#about p{
-			/*display:none;*/
+			display:none;
 		}
 	/*end about section*/
 	/*dev news section*/
-		#dev-news{
-			width:100vw;
+		/*#dev-news{
+			all:unset;
 		}
+		
 		#dev-news img{
-			width:250px;
+			width:50px;
+			display:none;
+		}*/
+		#dev-news{
+			display:none;
 		}
 	/*end dev news section*/
+	
 }
