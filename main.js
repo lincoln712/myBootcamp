@@ -32,28 +32,22 @@ arrowCloseMenu.addEventListener('click',function(){
 /*end home settings*/
 
 /*dev-news settings*/
-let dev = document.querySelectorAll(".dev");
-let p = document.querySelectorAll("#dev-news .p");
+let dots = document.querySelectorAll(".dots");
+let moreText = document.querySelectorAll("#dev-news .more");
 let readMore = document.querySelectorAll("#dev-news .read-more");
-let readLess = document.querySelectorAll("#dev-news .read-less");
-let cN = p[0].className;
 
 readMore.forEach(function(rm,i){
-	rm.addEventListener('click',function(){
-		rm.previousElementSibling.classList.remove(cN);
-		/*remove read more button*/
-		rm.remove();
-		readLess[i].style.display = "inline";
+	rm.addEventListener('click',function(e){
+		if(dots[i].style.display == "none"){
+			dots[i].style.display = "inline";
+			e.target.innerHTML = "Read More";
+			moreText[i].style.display = "none";
+		}else{
+			dots[i].style.display = "none";
+			e.target.innerHTML = "Read Less";
+			moreText[i].style.display = "inline";
+		}
 	});
 });
 
-readLess.forEach(function(rl,i){
-	rl.addEventListener('click',function(){
-		rl.previousElementSibling.classList.add(cN);
-		/*insert read more button again before the read less*/
-		dev[i].insertBefore(readMore[i],this);
-		rl.style.display = "none";
-		readMore[i].style.display = "inline";
-	});
-});
 /*end dev-news settings*/
