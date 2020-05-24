@@ -112,6 +112,29 @@ footer{
 	color:var(--secondary-color);
 }
 
+/*test*/
+#home .check-side-menu:checked ~ aside{
+		transition: transform 250ms ease-in-out 100ms;
+		transform:translateX(0%);
+	}	
+	#home aside{
+		transition:transform 250ms ease-in-out;
+		transform:translateX(-100%);
+		display:flex;
+		flex-direction: column;
+		justify-content:center;
+		height:100%;
+		align-items:center;
+	}
+	
+	#home .open-menu,.close-menu{
+		background:var(--primary-color);
+		position:absolute;
+		/*font-size:1.5rem;*/
+		color:#f4f4f4;
+		font-weight:800;
+		padding:0.6rem;
+	}	
 /*To mobile screens*/
 @media(max-width:576px){
 	/*navigation*/
@@ -291,39 +314,47 @@ footer{
 	/*home section*/
 		#home{
 			width:100%;
-			height:100vh;
+			height:100%; /* original 100vh*/
 			overflow-x:hidden;
 		}
 		
-		#home aside{
-			all: unset;	
+		/*try to use drop downs to hide the form*/
+	/*	#home aside{
+			display: none;
+			/*all: unset;	
 			display:flex;
 			text-align: center;
-		}
+		}*/
 		
-		#home aside .form-container,.menu{
+		#home aside .menu{ /*it contained the form-container*/
 			box-shadow:0 0 3px #333;
 			font-size:2.5rem;
-			width:50%;
-			height:50vh;
+			width:100%;
+			height:50vh; /*original 50vh*/
 			padding:0.5rem;
 			display: inherit;
 			justify-content: center;
 			flex-direction: column;
 		}
 		
-		#home aside .form-mobile{
+		/*#home aside .form-mobile{
 			display:none;
 		}
+		*/
+		.form-container{
+			display: none;
+		}
 		#home aside .form-container h4{
+			display: none;
 			text-transform: uppercase;
 			color:var(--primary-color);
 			text-align: center;
 		}
 		
 		#home aside .form-container form{
-		line-height:1.7;
-		padding:1rem;
+			/*display:none;*/
+			line-height:1.7;
+			/*padding:1rem;*/
 		}
 		
 		#home aside .form-container .red{
@@ -345,9 +376,16 @@ footer{
 		margin:0 auto;
 		}
 		
-		#home .open-menu,.close-menu,.check-side-menu{
+		.check-side-menu{
 			display:none;
 		}
+		
+		#home .open-menu,.close-menu{
+			font-size:48px;
+		}
+	/*	#home .open-menu,.close-menu,.check-side-menu{
+			display:none;
+		}*/
 	/*end home section*/
 	/*about section*/
 		#about{
