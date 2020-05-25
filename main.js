@@ -12,11 +12,19 @@ arrowCloseMenu.style.display = "none";
 sideMenu.style.height = "0vh";
 
 arrowOpenMenu.addEventListener('click',function(){
-	arrowCloseMenu.style.top = finalHeight;
-	arrowCloseMenu.style.left = "60%";
-	arrowOpenMenu.style.display = "none";
-	arrowCloseMenu.style.display = "block";
-	sideMenu.style.height = "50vh";
+	if(detectMob()){
+		arrowCloseMenu.style.top = finalHeight;
+		arrowCloseMenu.style.left = "60%";
+		arrowOpenMenu.style.display = "none";
+		arrowCloseMenu.style.display = "block";
+		sideMenu.style.height = "50vh";
+	}else{
+		arrowCloseMenu.style.top = finalHeight;
+		arrowCloseMenu.style.left = "100%";
+		arrowOpenMenu.style.display = "none";
+		arrowCloseMenu.style.display = "block";
+		sideMenu.style.height = "50vh";
+	}
 });
 
 arrowCloseMenu.addEventListener('click',function(){
@@ -29,6 +37,12 @@ arrowCloseMenu.addEventListener('click',function(){
 		sideMenu.style.height = "0vh";
 	},300);
 });
+
+function detectMob() {
+    return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 ) );
+}
+
+//alert(detectMob());
 /*end home settings*/
 
 /*dev-news settings*/

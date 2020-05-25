@@ -11,6 +11,7 @@
 body{
 	background:var(--secondary-color);
 }
+
 /*navigation*/
 header{
 	background:var(--primary-color);
@@ -291,62 +292,83 @@ footer{
 	/*home section*/
 		#home{
 			width:100%;
-			height:100vh;
+			height:100%; /* original 100vh*/
 			overflow-x:hidden;
 		}
 		
-		#home aside{
-			all: unset;	
-			display:flex;
-			text-align: center;
-		}
-		
-		#home aside .form-container,.menu{
-			box-shadow:0 0 3px #333;
-			font-size:2.5rem;
-			width:50%;
-			height:50vh;
-			padding:0.5rem;
-			display: inherit;
-			justify-content: center;
-			flex-direction: column;
-		}
-		
-		#home aside .form-mobile{
+		/*try to use drop downs to hide the form*/
+		.form-mobile{
 			display:none;
 		}
-		#home aside .form-container h4{
-			text-transform: uppercase;
-			color:var(--primary-color);
-			text-align: center;
+		
+		
+		#home .check-side-menu:checked ~ aside{
+		transition: transform 250ms ease-in-out 100ms;
+		transform:translateX(0%);
+		}	
+		#home aside{
+		transition:transform 250ms ease-in-out;
+		transform:translateX(-100%);
+		display:flex;
+		justify-content: space-between;
+		/*flex-direction: column;
+		justify-content:center;*/
+		height:100%;
+		align-items:center;
+		width:100%;
+	/*	box-shadow:0 0 10px #333; */
 		}
 		
-		#home aside .form-container form{
-		line-height:1.7;
-		padding:1rem;
+		#home .open-menu,.close-menu{
+		background:var(--primary-color);
+		position:absolute;
+		/*font-size:1.5rem;*/
+		color:#f4f4f4;
+		font-weight:800;
+		padding:0.6rem;
 		}
 		
-		#home aside .form-container .red{
+		.menu,.form-desktop{
+			box-shadow:0 0 5px #333;
+			width:50%;
+			height:60%;
+			display: flex;
+			align-items: center;
+			justify-content:center;
+		}
+		.form-desktop{
+			flex-direction: column;
+			text-align:center;
+		}
+		.check-side-menu{
+			display:none;
+		}
+		
+		.form-desktop .red{
 			color:red;
 		}
-		#home aside .form-container input{
-			padding:1rem;
-			margin-left:0.3rem;
+		
+		.form-desktop h4{
+			color: var(--primary-color);
+			font-size:32px;
+			text-transform: uppercase;
+		}
+		.form-desktop form{
+			line-height:2;
 		}
 		
-		#home aside .form-container textarea {
-			padding:3vh;
-			width:60%;
+		.form-desktop input{
+			padding:8px;
 		}
-		#home aside .form-container .btn-submit{
-		font-size:2rem;
-		display:block;
-		padding:1rem;
-		margin:0 auto;
+		.form-desktop textarea{
+			height:150px;
 		}
-		
-		#home .open-menu,.close-menu,.check-side-menu{
-			display:none;
+		.form-desktop .btn-submit{
+			display:block;
+			margin:0 auto;
+			font-size:25px;
+			padding:8px;
+			text-transform: uppercase;
 		}
 	/*end home section*/
 	/*about section*/
