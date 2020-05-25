@@ -20,7 +20,7 @@ arrowOpenMenu.addEventListener('click',function(){
 		sideMenu.style.height = "50vh";
 	}else{
 		arrowCloseMenu.style.top = finalHeight;
-		arrowCloseMenu.style.left = "93%";
+		arrowCloseMenu.style.left = "96%";
 		arrowOpenMenu.style.display = "none";
 		arrowCloseMenu.style.display = "block";
 		sideMenu.style.height = "50vh";
