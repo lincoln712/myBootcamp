@@ -25,7 +25,8 @@ if(detectMob()){
 
 arrowOpenMenu.addEventListener('click',function(){
 	if(detectMob()){
-		arrowCloseMenu.style.top = finalHeight;
+		initialHeight = "115vh";
+		arrowCloseMenu.style.top = initialHeight;
 		arrowCloseMenu.style.left = "60%";
 		arrowOpenMenu.style.display = "none";
 		arrowCloseMenu.style.display = "block";
@@ -43,6 +44,7 @@ arrowOpenMenu.addEventListener('click',function(){
 arrowCloseMenu.addEventListener('click',function(){
 	//if it's mobile device
 	if(detectMob()){
+		initialHeight = "75vh";
 		arrowOpenMenu.style.top = initialHeight;
 		arrowOpenMenu.style.left = "0";
 		arrowCloseMenu.style.display = "none";
