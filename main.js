@@ -3,13 +3,25 @@ let arrowOpenMenu = document.querySelector(".open-menu");
 let arrowCloseMenu = document.querySelector(".close-menu");
 let sideMenu = document.querySelector("aside");
 
-const initialHeight = "75vh";
-const finalHeight = "100vh";
+//if mobile then, to adjust the height for 75vh
+let initialHeight = "75vh";
 
-arrowOpenMenu.style.top = initialHeight;
-arrowOpenMenu.style.left = "0";
-arrowCloseMenu.style.display = "none";
-sideMenu.style.height = "0vh";
+//otherwise, to adjust the height for 115vh
+
+if(detectMob()){
+	arrowOpenMenu.style.top = initialHeight;
+	arrowOpenMenu.style.left = "0";
+	arrowCloseMenu.style.display = "none";
+	sideMenu.style.height = "0vh";
+
+}else{
+	initialHeight = "115vh";
+	arrowOpenMenu.style.top = initialHeight;
+	arrowOpenMenu.style.left = "0";
+	arrowCloseMenu.style.display = "none";
+	sideMenu.style.height = "0vh";
+
+}
 
 arrowOpenMenu.addEventListener('click',function(){
 	if(detectMob()){
@@ -19,8 +31,9 @@ arrowOpenMenu.addEventListener('click',function(){
 		arrowCloseMenu.style.display = "block";
 		sideMenu.style.height = "50vh";
 	}else{
-		arrowCloseMenu.style.top = finalHeight;
-		arrowCloseMenu.style.left = "96%";
+		initialHeightHeight = "115vh";
+		arrowCloseMenu.style.top = initialHeight;
+		arrowCloseMenu.style.left = "97%";
 		arrowOpenMenu.style.display = "none";
 		arrowCloseMenu.style.display = "block";
 		sideMenu.style.height = "50vh";
@@ -28,10 +41,20 @@ arrowOpenMenu.addEventListener('click',function(){
 });
 
 arrowCloseMenu.addEventListener('click',function(){
-	arrowOpenMenu.style.top = initialHeight;
-	arrowOpenMenu.style.left = "0";
-	arrowCloseMenu.style.display = "none";
-	arrowOpenMenu.style.display = "block";
+	//if it's mobile device
+	if(detectMob()){
+		arrowOpenMenu.style.top = initialHeight;
+		arrowOpenMenu.style.left = "0";
+		arrowCloseMenu.style.display = "none";
+		arrowOpenMenu.style.display = "block";
+	}else{
+		initialHeight = "115vh";
+		arrowOpenMenu.style.top = initialHeight;
+		arrowOpenMenu.style.left = "0";
+		arrowCloseMenu.style.display = "none";
+		arrowOpenMenu.style.display = "block";
+	}
+
 	
 	setTimeout(function(){
 		sideMenu.style.height = "0vh";
