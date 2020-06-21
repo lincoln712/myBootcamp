@@ -22,6 +22,7 @@ header{
 header h1{
 	letter-spacing:1.7px;
 	font-style:italic;
+	font-size:1.5rem;
 }
 
 header nav ul{
@@ -33,18 +34,20 @@ header nav ul{
 header nav ul li a{
 	text-decoration:none;
 	color:var(--primary-color);
+	
 }
 /*end navigation*/
 
 /*home section*/
 #home .showcase{
-	background-image:url("img/womanUsingAComputer.jpg");
+	background-image:url("img/background.jpg");
 	background-position:center;
 	background-size:cover;
 	background-repeat: no-repeat;
-	width:100vw;
+	width:100%;
 	height:50vh;
 }
+
 #home aside{
 	/*box-shadow:0 0 3px #333;*/
 	width:60%;
@@ -254,14 +257,14 @@ footer{
 /*To desktop screens*/
 @media(min-width:768px){
 	body{
-		font-size:20px;
+		overflow-x: hidden;
 	}
 	#home .showcase{
 		height:100vh;
 	}
 	/*navigation*/	
 	header{
-		height:15vh;
+		height:10vh;
 		display:flex;
 	}
 	header h1{
@@ -270,6 +273,7 @@ footer{
 		align-items:center;
 		width:50vw;
 		margin-left:1rem;
+		font-size:1.5rem;
 	}
 	header nav ul{
 		display: flex;
@@ -284,7 +288,8 @@ footer{
 		margin-right:2rem;
 	}
 	header nav ul li a{
-		color:var(--secondary-color)
+		color:var(--secondary-color);
+		font-size: 1rem;
 	}	
 	header .check{
 		display:none;
@@ -294,11 +299,11 @@ footer{
 	}
 	/*end navigation*/
 	/*home section*/
-		#home{
+		/*#home{
 			width:100%;
-			height:100%; /* original 100vh*/
+			height:50%; /* original 100vh*
 			overflow-x:hidden;
-		}
+		}*/
 		
 		/*try to use drop downs to hide the form*/
 		.form-mobile{
@@ -307,8 +312,8 @@ footer{
 		
 		
 		#home .check-side-menu:checked ~ aside{
-		transition: transform 250ms ease-in-out 100ms;
-		transform:translateX(0%);
+			transition: transform 250ms ease-in-out 100ms;
+			transform:translateX(0%);
 		}	
 		#home aside{
 		transition:transform 250ms ease-in-out;
@@ -317,7 +322,7 @@ footer{
 		justify-content: space-between;
 		/*flex-direction: column;
 		justify-content:center;*/
-		height:100%;
+		height:50%;
 		align-items:center;
 		width:100%;
 		margin:63px 0;
@@ -330,7 +335,7 @@ footer{
 		color:#f4f4f4;
 		font-weight:800;
 		padding:0.7rem;
-		font-size:32px;
+		font-size:25px;
 		}
 		
 		.menu{
@@ -353,14 +358,14 @@ footer{
 		.check-side-menu{
 			display:none;
 		}
-		
+	
 		.form-desktop .red{
 			color:red;
 		}
 		
 		.form-desktop h4{
 			color: var(--primary-color);
-			font-size:25px;
+			font-size:16px;
 			text-transform: uppercase;
 		}
 		.form-desktop form{
@@ -368,7 +373,8 @@ footer{
 		}
 		
 		.form-desktop input{
-			padding:8px;
+			padding:5px;
+			margin:5px;
 		}
 		.form-desktop textarea{
 			height:150px;
@@ -377,7 +383,7 @@ footer{
 		.form-desktop .btn-submit{
 			display:block;
 			margin:0 auto;
-			font-size:25px;
+			font-size:16px;
 			padding:8px;
 			text-transform: uppercase;
 		}
@@ -385,13 +391,15 @@ footer{
 	/*about section*/
 		#about{
 			all: unset;
-			height:50vh;
+			height:100%;
 			width:100%;
 		}
 		
 		#about p{
-			padding:4.5rem;
+			padding:20px;
 			text-indent:30%;
+			font-size: 16px;
+
 		}
 	/*end about section*/
 	/*dev news section*/
@@ -400,49 +408,52 @@ footer{
 			height:100%; /*original 65vh*/
 			display: grid;
 			place-items:center;
+			margin-top: 3rem;
 		}
 		
 		#dev-news .header{
 			width:100%;
-			font-size:2rem;
+			font-size:1.5rem;
 			height:10vh;
 		}
 		#dev-news img{
-			width:225px;
+			width:150px;
 		}
 		#dev-news .dev p{
-			font-size:2rem;
+			font-size:1rem;
 			padding-bottom:16px;
 		}
 		#dev-news .dev{
 			box-shadow: 0 0 7px #333;
-			width:100%;
+			width:30%;
 			height:50%;
-			padding:10px;
+			padding: 0.5rem;
 			line-height:1.6;
-			margin:75px 0;
+			margin:60px 0;
 		}
 		#dev-news .highlights{
 			display:flex;
-			justify-content:space-between;
+			justify-content:space-around;
 		}
 		#dev-news .read-more{
 			padding:0.4rem;
+			font-size: 0.7rem;
 		}
 
 	/*end dev news section*/
 	/*footer*/
 	footer{
 		height:100%;
-		font-size:2.5rem;
-		padding:56px 0;
+		font-size:1.5rem;
+		padding:20px 0;
 		line-height:2;
 	}	
 	footer .social-media .icon{
-		font-size:3.7rem;
+		font-size:30px;
 		margin:0 auto;
 	}
 	footer .social-media{
-		display: flex;
-	}
-}
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
+		gap:0;
+	}padding-bottom: 4rem;

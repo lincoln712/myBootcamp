@@ -15,7 +15,7 @@ if(detectMob()){
 	sideMenu.style.height = "0vh";
 
 }else{
-	initialHeight = "115vh";
+	initialHeight = "110vh";
 	arrowOpenMenu.style.top = initialHeight;
 	arrowOpenMenu.style.left = "0";
 	arrowCloseMenu.style.display = "none";
@@ -32,7 +32,7 @@ arrowOpenMenu.addEventListener('click',function(){
 		arrowCloseMenu.style.display = "block";
 		sideMenu.style.height = "50vh";
 	}else{
-		initialHeightHeight = "115vh";
+		initialHeightHeight = "110vh";
 		arrowCloseMenu.style.top = initialHeight;
 		arrowCloseMenu.style.left = "97%";
 		arrowOpenMenu.style.display = "none";
@@ -50,7 +50,7 @@ arrowCloseMenu.addEventListener('click',function(){
 		arrowCloseMenu.style.display = "none";
 		arrowOpenMenu.style.display = "block";
 	}else{
-		initialHeight = "115vh";
+		initialHeight = "110vh";
 		arrowOpenMenu.style.top = initialHeight;
 		arrowOpenMenu.style.left = "0";
 		arrowCloseMenu.style.display = "none";
